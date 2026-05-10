@@ -1,0 +1,18 @@
+# write_poem:
+#   description: >
+#     Write a poem about how CrewAI is awesome.
+#     Ensure the poem is engaging and adheres to the specified sentence count of {sentence_count}.
+#   expected_output: >
+#     A beautifully crafted poem about CrewAI, with exactly {sentence_count} sentences.
+#   agent: poem_writer
+
+summarize_notes_task:
+  description: "Read the provided text from the student's notes and write a 3-paragraph summary of the core concepts. \n\nNOTES: {raw_notes}"
+  expected_output: "A well-structured markdown summary with bullet points."
+  agent: summarizer
+  
+
+create_quiz_task:
+  description: "Using the summary provided, generate 5 multiple-choice questions. Include the correct answer and a brief explanation for each."
+  expected_output: "A JSON list of 5 questions, options, and correct answers."
+  agent: quiz_master
